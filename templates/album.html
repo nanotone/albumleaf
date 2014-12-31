@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{ albumname }}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/lib/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="/static/lib/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="header page-header">
+        {% if allsize %}
+        <ul class="nav nav-pills pull-right">
+            <li><a href="/static/{{album}}/archive.zip">Download all ({{allsize}})</a></li>
+        </ul>
+        {% endif %}
+        <h2>{{ albumname }}</h2>
+    </div>
+    <div class="row">
+    {% for pic in pics %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <a href="/static/{{album}}/{{pic}}" class="fancybox" rel="group" title="{{pic}}">
+                <img class="img-thumbnail" src="/static/{{album}}/thumbnails/{{pic}}" alt="{{pic}}" title="{{pic}}" />
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+    <script type="text/javascript">
+$(function() {
+    $(".fancybox").fancybox({
+        helpers: {
+            overlay: {
+                css: {background: 'rgba(0, 0, 0, 0.5)'}
+            },
+            title: null
+        }
+    });
+});
+    </script>
+</body>
+</html>

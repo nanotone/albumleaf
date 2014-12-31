@@ -1,0 +1,10 @@
+<head>
+<style>
+a { text-decoration: none; }
+</style>
+</head>
+<body>
+{% for album in albums %}
+    <div><a href="/{{album}}">{{ album|replace('_',' ') }}</a></div>
+{% endfor %}
+</body>
