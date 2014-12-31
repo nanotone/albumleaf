@@ -21,9 +21,12 @@ def index():
 def show_album(album):
     if album == 'favicon.ico': return ''
     pics = []
-    for path in os.listdir('static/' + album):
-        if path.rsplit('.', 1)[-1].lower() in ('jpg', 'jpeg'):
-            pics.append(path)
+    try:
+        for path in os.listdir('static/' + album):
+            if path.rsplit('.', 1)[-1].lower() in ('jpg', 'jpeg'):
+                pics.append(path)
+    except OSError:
+        flask.abort(404)
     pics.sort()
     albumname = album.replace('_', ' ')
     try:
