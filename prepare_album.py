@@ -22,7 +22,8 @@ def prepare_album(path):
         except ValueError:
             pass
     if photos:
-        subprocess.check_call(['zip', 'archive.zip'] + photos)
+        album = os.path.basename(os.path.abspath('.'))
+        subprocess.check_call(['zip', '%s.zip' % album] + photos)
     else:
         print "WARNING: no photos found"
 

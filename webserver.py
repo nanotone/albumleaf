@@ -31,7 +31,7 @@ def show_album(album):
     pics.sort()
     albumname = album.replace('_', ' ')
     try:
-        allsize = subprocess.check_output(['du', '-h', 'static/%s/archive.zip' % album]).split()[0]
+        allsize = subprocess.check_output(['du', '-h', 'static/%s/%s.zip' % (album, album)]).split()[0]
     except subprocess.CalledProcessError:
         allsize = None
     return flask.render_template('album.html', album=album, albumname=albumname, allsize=allsize, pics=pics)
