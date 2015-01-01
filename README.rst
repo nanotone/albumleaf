@@ -4,7 +4,7 @@ albumleaf
 Albumleaf is a minimal web-based photo gallery. To use it, you need your own webserver, which isn't very accommodating. But it fulfills my requirements for sharing photos with family:
 
 - Simplicity
-- Sharing via a link (no signing-up)
+- Sharing via a link (no signing up)
 - Batch album downloads
 - Self-hosting, which is the best bet for getting around the GFW
 
@@ -12,7 +12,8 @@ A few other features that some people may consider bugs:
 
 - Uploading via ``scp -r``
 - A little script to generate thumbnails and batch archives
-- Easily hackable page layout (it's just Bootstrap and jQuery+FancyBox)
+- Vendorized dependencies
+- Malleable page layout (it's just Bootstrap and jQuery+FancyBox)
 - Filesystem as database
 
 Installation
