@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 @app.route('/')
 def index():
     albums = []
-    for album in os.listdir('static'):
+    for album in sorted(os.listdir('static'), reverse=True):
         try:
             os.listdir('static/' + album)
             os.listdir('static/' + album + '/thumbnails')

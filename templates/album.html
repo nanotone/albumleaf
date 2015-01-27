@@ -22,7 +22,7 @@
     <div class="header page-header">
         {% if allsize %}
         <ul class="nav nav-pills pull-right">
-            <li><a href="/static/{{album}}/{{album}}.zip">Download all ({{allsize}})</a></li>
+            <li><a href="/static/{{album|urlencode}}/{{album|urlencode}}.zip">Download all ({{allsize}})</a></li>
         </ul>
         {% endif %}
         <h2>{{ albumname }}</h2>
@@ -30,8 +30,8 @@
     <div class="row">
     {% for pic in pics %}
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <a href="/static/{{album}}/{{pic}}" class="fancybox" rel="group" title="{{pic}}">
-                <img class="img-thumbnail" src="/static/{{album}}/thumbnails/{{pic}}" alt="{{pic}}" title="{{pic}}" />
+            <a href="/static/{{album|urlencode}}/{{pic}}" class="fancybox" rel="group" title="{{pic}}">
+                <img class="img-thumbnail" src="/static/{{album|urlencode}}/thumbnails/{{pic|urlencode}}" alt="{{pic}}" title="{{pic}}" />
             </a>
         </div>
     {% endfor %}
